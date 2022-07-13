@@ -2,8 +2,6 @@ import sys
 import pygame
 from tale import *
 from pygame.locals import *
-import random
-
 
 pygame.init()
 pygame.display.set_caption("Simplest game")
@@ -26,9 +24,9 @@ for i in range(int(width / normal_tale.width)):
     tales_list.append([])
     for j in range(int(height / normal_tale.height)):
         if i == 0 or i == (width / normal_tale.width) - 1 or j == 0 or j == (height / normal_tale.height) - 1:
-            tales_list[i].append(Tale(DARK_GREY, is_solid = True, x = i * normal_tale.width, y = j * normal_tale.height))
+            tales_list[i].append(Tale((10 + (j*3), 10 + (j*3), 10 + (j*3)), is_solid = True, x = i * normal_tale.width, y = j * normal_tale.height))
         else:
-            tales_list[i].append(Tale(LIGHT_GRAY, x = i * normal_tale.width, y = j * normal_tale.height))
+            tales_list[i].append(Tale((50+(j*3),50+(j*3),50+(j*3)), x = i * normal_tale.width, y = j * normal_tale.height))
 tales_list[29][15] = player_tale
 tales_list[2][2] = victorious_tale
 
